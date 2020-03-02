@@ -1,27 +1,17 @@
-/* Isabella Man
- * CSE 15
- * pa4
- * 12/3/19
- * Header for Integer Queue ADT based on a Linked List
+/*
+ * Header file for the Integer Queue ADT in C
  */
-
-//-----------------------------------------------------------------------------
-// IntegerQueue.h
-// Header file for the Integer Queue ADT in C
-//-----------------------------------------------------------------------------
 #include<stdlib.h>
 #include<stdio.h>
 
 #ifndef _Queue_H_INCLUDE_
 #define _Queue_H_INCLUDE_
 
-
 // Exported type --------------------------------------------------------------
 
 // IntegerQueue
 // Exported reference type
 typedef struct IntegerQueueObj* IntegerQueue;
-
 
 // Constructors-Destructors ---------------------------------------------------
 
@@ -32,7 +22,6 @@ IntegerQueue newIntegerQueue();
 // freeIntegerQueue()
 // Destructor for the Queue ADT
 void freeIntegerQueue(IntegerQueue* pQ);
-
 
 // ADT operations -------------------------------------------------------------
 
@@ -78,6 +67,5 @@ char* IntegerQueueToString(IntegerQueue Q);
 // Returns true (1) if Q and R are matching sequences of integers, false (0) 
 // otherwise.
 int equals(IntegerQueue Q, IntegerQueue R);
-
 
 #endif
