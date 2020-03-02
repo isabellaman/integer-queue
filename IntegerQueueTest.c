@@ -1,14 +1,6 @@
-/* Isabella Man
- * CSE 15
- * pa4
- * 12/3/19
- * Client to test the Integer Queue ADT based on a Linked List
+/*
+ * Test client for the IntegerQueue ADT
  */
-
-//-----------------------------------------------------------------------------
-// IntegerQueueTest.c
-// Test client for the IntegerQueue ADT
-//-----------------------------------------------------------------------------
 #include<stdio.h>
 #include<stdlib.h>
 #include"IntegerQueue.h" 
