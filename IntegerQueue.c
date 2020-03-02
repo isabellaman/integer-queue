@@ -1,14 +1,6 @@
-/* Isabella Man
- * CSE 15
- * pa4
- * 12/3/19
- * Integer Queue ADT based on a Linked List
+/*
+ * Linked List implementation of Integer Queue ADT in C
  */
-
-//-----------------------------------------------------------------------------
-// IntegerQueue.c
-// Linked List implementation of Integer Queue ADT in C
-//-----------------------------------------------------------------------------
 #include<stdlib.h>
 #include<stdio.h>
 #include<assert.h>
@@ -47,7 +39,6 @@ Node newNode(int x) {
    return N;
 }
 
-// freeNode()
 // destructor for the Node type
 void freeNode(Node* pN){
    if( pN!=NULL && *pN!=NULL ){
@@ -77,7 +68,6 @@ IntegerQueue newIntegerQueue() {
    return Q;
 }
 
-
 // freeIntegerQueue()
 // Destructor for the Queue ADT
 void freeIntegerQueue(IntegerQueue* pQ){
@@ -104,9 +94,7 @@ int isEmpty(IntegerQueue Q) {
    else {
       return 0;
    }
-   //return (Q->numItems == 0);
 }
-
 
 // length()
 // Returns the number of elements in Q
@@ -129,7 +117,7 @@ void enqueue(IntegerQueue Q, int x){
    if (Q->front == NULL) {	//Queue is empty
       Q->front = Q->back = B;
    }
-   else {			//Queue is non-empty
+   else {			         //Queue is non-empty
       Q->back->next = B;
       Q->back = B;
    }
@@ -148,7 +136,6 @@ int dequeue(IntegerQueue Q) {
       exit(EXIT_FAILURE);
    }
    
-
    x = Q->front->item;
    N = Q->front;
    if (Q->front == Q->back) {
@@ -156,13 +143,11 @@ int dequeue(IntegerQueue Q) {
    }
    else {
       Q->front = Q->front->next;
-      //Q->front = B->next;
    }
    freeIntegerQueue(&N);
    Q->numItems--;
    return x;
 }
-
 
 // peek()
 // Returns the item at front of Q.
@@ -178,7 +163,6 @@ int peek(IntegerQueue Q) {
       return N->item;
    }
 }
-
 
 // dequeueAll()
 // Resets Q to the empty state.
@@ -198,12 +182,6 @@ void dequeueAll(IntegerQueue Q) {
 
 // Other Operations -----------------------------------------------------------
 // IntegerQueueToString()
-// Determines a text representation of IntegerQueue Q. Returns a pointer to a
-// char array, allocated from heap memory, containing the integer sequence
-// represented by Q. The sequence is traversed from front to back, each integer
-// is added to the string followed by a single space. The array is terminated
-// by a NUL '\n' character. It is the responsibility of the calling function to
-// free this heap memory.
 char* IntegerQueueToString(IntegerQueue Q) {
    char* str;
    if (Q == NULL) {
@@ -219,7 +197,6 @@ char* IntegerQueueToString(IntegerQueue Q) {
       T = Q->front;
 
       while(T->next != NULL) {
-         //T = T->next;
          int val = T->item;
          length += sprintf(str+length, "%d ", val);
          T = T->next;
@@ -254,4 +231,3 @@ int equals(IntegerQueue Q, IntegerQueue R) {
    }
    return eq;
 }
-
