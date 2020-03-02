@@ -1,11 +1,5 @@
-
-
-
 README
-Simulation.c 
 IntegerQueue.h
 IntegerQueue.c
 IntegerQueueTest.c 
-Job.h 
-Job.c 
 Makefile
